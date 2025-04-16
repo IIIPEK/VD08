@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Случайная цитата{% endblock %}
+
+{% block content %}
+<main class="container my-5">
+    <div class="container my-5">
+        {% if author_ru %}
+            <h1 class="text-center mb-4">{{ author_ru }}</h1>
+        {% endif %}
+        <p class="lead text-center mb-5"></p>
+        {% if quote_ru %}
+            <div class="text-center"><h3>{{ quote_ru }}</h3></div>
+            <hr>
+        {% endif %}
+
+        {% if author %}
+            <h1 class="text-center mb-4">{{ author }}</h1>
+        {% endif %}
+        <p class="lead text-center mb-5"></p>
+        {% if quote %}
+            <div class="text-center"><h3>{{ quote }}</h3></div>
+        {% endif %}
+    </div>
+    <div class="container my-5 text-center">
+            <form method="POST">
+                <button type="submit" class="btn btn-primary">Получить цитату</button>
+            </form>
+    </div>
+</main>
+{% endblock %}
